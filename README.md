@@ -11,26 +11,21 @@ retain their original licenses.
 
 | Tool | Release | Status | Purpose |
 |---|---:|---|---|
-| PhotoshopToSpine | v7.54 | Integration pending source package | Prepare layered Photoshop PSD artwork for Spine JSON import |
+| PhotoshopToSpine | v7.54 | Source imported; runtime validation pending | Prepare layered Photoshop PSD artwork for Spine JSON import |
 
 ## PhotoshopToSpine v7.54
 
-The planned SYMBIOTYC edition is based on the Photoshop exporter originally
-published by Esoteric Software. The described enhancements are:
+The supplied SYMBIOTYC JSX source has been added at
+[`photoshop/PhotoshopToSpine_v7.54_SYMBIOTYC.jsx`](photoshop/PhotoshopToSpine_v7.54_SYMBIOTYC.jsx).
 
-- Centering and coordinate normalization for the exported scene.
-- Layer consolidation where explicitly requested.
-- Mask construction.
-- Folder-to-bone hierarchy generation.
-- Layer compositing/overlay handling.
-- Spine JSON plus a companion images directory.
+The source declares version `7.54`, retains Esoteric Software's copyright and
+redistribution notice, and includes SYMBIOTYC modifications. It exports PNG
+layers and Spine JSON, centers coordinates on the PSD canvas, supports
+folder-to-bone hierarchy and pivots, layer/group merging, clipping masks,
+overlays, skins, slots, meshes, blend modes, trimming, scale and padding.
 
-**Important:** the actual `photoshopToSpine_v7.54` JSX source and its original
-license/attribution package have not yet been supplied to this repository.
-The catalog entry is not a claim that the script has been published or tested.
-Do not distribute a placeholder as a working exporter. Add the source only
-after its exact release file, author attribution, upstream license obligations,
-and supported Photoshop/Spine versions have been verified.
+The script is imported, but has **not** yet been run in Photoshop or accepted by
+Spine Editor. Do not describe it as runtime-verified until those checks pass.
 
 See [PhotoshopToSpine integration notes](photoshop/README.md).
 
