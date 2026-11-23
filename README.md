@@ -11,7 +11,7 @@ retain their original licenses.
 
 | Tool | Release | Status | Purpose |
 |---|---:|---|---|
-| PhotoshopToSpine | v7.54 | Source imported; runtime validation pending | Prepare layered Photoshop PSD artwork for Spine JSON import |
+| PhotoshopToSpine | v7.54 | Source imported; static integrity CI; Photoshop/Spine runtime acceptance pending | Prepare layered Photoshop PSD artwork for Spine JSON import |
 
 ## PhotoshopToSpine v7.54
 
@@ -24,10 +24,22 @@ layers and Spine JSON, centers coordinates on the PSD canvas, supports
 folder-to-bone hierarchy and pivots, layer/group merging, clipping masks,
 overlays, skins, slots, meshes, blend modes, trimming, scale and padding.
 
-The script is imported, but has **not** yet been run in Photoshop or accepted by
-Spine Editor. Do not describe it as runtime-verified until those checks pass.
+The script is imported, but has **not** yet been run in Adobe Photoshop or
+accepted by Spine Editor. Do not describe it as runtime-verified until those
+checks pass. The repository's GitHub Actions workflow performs source-integrity
+checks only; it does not emulate Photoshop or certify Spine import.
 
 See [PhotoshopToSpine integration notes](photoshop/README.md).
+
+## Runtime and native-processing boundary
+
+The v7.54 JSX is an Adobe Photoshop ExtendScript program and depends on the
+Photoshop DOM. A GitHub Ubuntu runner or Cloudflare Worker cannot execute that
+DOM. A native PSD/PSB parser and renderer is a separate implementation, not a
+drop-in execution of this JSX. Any native alternative must document its own
+source revision, supported PSD/PSB features, rasterization limitations and
+Spine Editor acceptance evidence. Do not attribute native-parser results to
+the Photoshop JSX.
 
 ## Contribution and release rules
 
