@@ -44,6 +44,24 @@ jobs:
           actual_blob="$(git hash-object "$source_file")"
           test "$actual_blob" = "$expected_blob"
 
+      - name: Verify machine-readable source manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          manifest='photoshop/source-manifest.json'
+          jq -e '
+            .schemaVersion == 1 and
+            .tool == "PhotoshopToSpine" and
+            .release == "7.54" and
+            .source.path == "photoshop/PhotoshopToSpine_v7.54_SYMBIOTYC.jsx" and
+            .source.gitBlobSha1 == "f5e5b36ade492d7d0a526cd013699a9cb5340ed6" and
+            .source.runtimeVerified == false and
+            .provenance.licenseNoticePreserved == true and
+            .acceptance.photoshopExecution == "pending" and
+            .acceptance.spineEditorImport == "pending" and
+            (.sourceObservedCapabilities | length >= 20)
+          ' "$manifest" >/dev/null
+
       - name: Verify original BSD attribution and disclaimer
         shell: bash
         run: |
