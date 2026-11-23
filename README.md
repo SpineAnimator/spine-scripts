@@ -18,7 +18,7 @@ retain their original licenses.
 The supplied SYMBIOTYC JSX source has been added at
 [`photoshop/PhotoshopToSpine_v7.54_SYMBIOTYC.jsx`](photoshop/PhotoshopToSpine_v7.54_SYMBIOTYC.jsx).
 
-The source declares version `7.54`, retains Esoteric Software's copyright and
+The source declares version `7.54`, is pinned by Git blob SHA-1 `f5e5b36ade492d7d0a526cd013699a9cb5340ed6` in source-integrity CI, retains Esoteric Software's copyright and
 redistribution notice, and includes SYMBIOTYC modifications. It exports PNG
 layers and Spine JSON, centers coordinates on the PSD canvas, supports
 folder-to-bone hierarchy and pivots, layer/group merging, clipping masks,
