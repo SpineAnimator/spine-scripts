@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "tool": "PhotoshopToSpine",
+  "release": "7.54",
+  "source": {
+    "path": "photoshop/PhotoshopToSpine_v7.54_SYMBIOTYC.jsx",
+    "gitBlobSha1": "f5e5b36ade492d7d0a526cd013699a9cb5340ed6",
+    "photoshopDirective": "#target photoshop",
+    "runtime": "Adobe Photoshop ExtendScript / Photoshop DOM",
+    "runtimeVerified": false
+  },
+  "provenance": {
+    "upstream": "https://github.com/EsotericSoftware/spine-scripts/tree/master/photoshop",
+    "copyright": "Esoteric Software, 2012-2022",
+    "modifiedBy": "SYMBIOTYC",
+    "officialUpstreamRelease": false,
+    "licenseNoticePreserved": true
+  },
+  "sourceObservedCapabilities": [
+    "individual-layer-png-export",
+    "spine-json-export",
+    "canvas-centered-origin",
+    "nested-folder-to-bone-hierarchy",
+    "group-pivots-from-descendant-bounds",
+    "bone-tags",
+    "slot-tags",
+    "skin-tags",
+    "folder-tags",
+    "overlay-clipping-mask",
+    "group-merge",
+    "mesh-and-linked-mesh",
+    "trim-and-trim-override",
+    "ignore-tags",
+    "scale-tags",
+    "path-tags",
+    "name-pattern-tags",
+    "photoshop-clipping-layer-merge",
+    "blend-modes",
+    "selected-layer-export",
+    "hidden-and-background-layer-options",
+    "padding",
+    "legacy-and-current-json-mode",
+    "localized-ui"
+  ],
+  "acceptance": {
+    "photoshopExecution": "pending",
+    "pngPixelComparison": "pending",
+    "spineEditorImport": "pending",
+    "jsonCompatibilityBySpineVersion": "pending",
+    "animationPlayback": "pending"
+  },
+  "limitations": [
+    "Source inspection and static CI do not prove runtime behavior.",
+    "Native PSD/PSB parser results must be tracked separately from this Photoshop JSX.",
+    "No claim of full Photoshop pixel parity or Spine Editor acceptance until those checks are performed."
+  ]
+}
