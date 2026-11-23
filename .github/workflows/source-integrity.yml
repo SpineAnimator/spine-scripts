@@ -35,6 +35,15 @@ jobs:
           grep -Fqx '#target photoshop' <(head -n 1 "$source_file")
           grep -Fq 'var scriptVersion = "7.54";' "$source_file"
 
+      - name: Verify pinned source blob identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          source_file='photoshop/PhotoshopToSpine_v7.54_SYMBIOTYC.jsx'
+          expected_blob='f5e5b36ade492d7d0a526cd013699a9cb5340ed6'
+          actual_blob="$(git hash-object "$source_file")"
+          test "$actual_blob" = "$expected_blob"
+
       - name: Verify original BSD attribution and disclaimer
         shell: bash
         run: |
