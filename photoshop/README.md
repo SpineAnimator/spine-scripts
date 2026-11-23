@@ -1,47 +1,20 @@
-# PhotoshopToSpine — SYMBIOTYC v7.54
+# Archived source record — SYMBIOTYC v7.54
 
-**Source status:** imported from the supplied SYMBIOTYC v7.54 JSX file.
-**Runtime status:** not yet executed in Adobe Photoshop or validated in Spine Editor.
+**Status: archive only.** This directory is retained solely for historical provenance and license preservation. The JSX source is not executed, deployed, supported, or integrated into the current Spine Animator workflow. Do not run it or add a runtime workflow for it.
 
-## Source package
+The active web pipeline is maintained separately at [Spine Animator /spine-scripts](https://spineanimator.github.io/spine-scripts/). It uses an independent browser-side PSD/PSB parser and does not invoke an external image editor.
 
-- Script: [PhotoshopToSpine_v7.54_SYMBIOTYC.jsx](PhotoshopToSpine_v7.54_SYMBIOTYC.jsx)
-- Script version declared in source: `7.54`
+## Provenance
+
+- Historical source: `PhotoshopToSpine_v7.54_SYMBIOTYC.jsx`
+- Declared source version: `7.54`
+- Original source blob SHA-1: `f5e5b36ade492d7d0a526cd013699a9cb5340ed6`
 - Original attribution: Esoteric Software, copyright 2012–2022.
-- The source retains the complete BSD-style copyright, redistribution conditions and disclaimer. Preserve this notice in every redistribution.
-- The supplied file contains SYMBIOTYC modifications beyond the upstream exporter. Those modifications must not be represented as an official Esoteric Software release.
+- The supplied source contains SYMBIOTYC modifications and is not an official Esoteric Software release.
+- The original BSD-style copyright, redistribution conditions, and disclaimer are retained. Preserve these notices if redistributing the archive.
 
-## Confirmed from source inspection
+## Archive limitations
 
-- Exports Photoshop layers as individual PNG images and writes Spine JSON with matching positions and draw order.
-- Uses the PSD canvas center as Spine origin.
-- Supports `[bone]`, `[slot]`, `[skin]`, `[folder]`, `[overlay]`, `[merge]`, `[mesh]`, `[trim]`, `[ignore]`, `[scale:]`, `[path:]` and `[name:]` tags.
-- Converts nested Photoshop groups/folders into a hierarchical Spine bone structure and computes group pivots from descendant artwork bounds.
-- Handles Photoshop clipping layers by merging them into their base layer before attachment collection.
-- Supports overlay layers as clipping masks and group merging.
-- Handles blend modes, linked meshes, skins, selected-layer export, hidden/background-layer options, trimming, scale and padding.
-- Can write either legacy or newer Spine JSON format through the `legacyJson` source flag.
-
-These are source-code observations, not runtime test results.
-
-## Intended workflow
-
-1. User supplies a layered PSD.
-2. The exact JSX runs in a compatible Adobe Photoshop environment.
-3. The exporter writes Spine JSON and a companion image directory.
-4. The output is validated as a self-contained import package.
-5. 2Spine consumes the package and continues skeleton construction or animation.
-
-## Runtime boundary
-
-Photoshop JSX/ExtendScript requires Adobe Photoshop. A Cloudflare Worker cannot execute Photoshop's DOM or ExtendScript. Production processing therefore requires a Photoshop-capable runner, or a separately validated PSD parser/renderer that implements the same export contract. Each job must record which engine processed it.
-
-## Acceptance checks
-
-- Run the script on representative PSD fixtures in supported Photoshop versions.
-- Compare source PSD dimensions, visible layer order, group paths and alpha against exported PNGs.
-- Verify nested folder-to-bone pivots, mask/clipping behavior and blend modes.
-- Parse generated JSON and verify every referenced image exists.
-- Validate legacy and current JSON modes against the declared Spine version.
-- Package JSON and images in one ZIP with a manifest and source checksum.
-- Never claim native Spine Editor acceptance without a real licensed Editor test.
+- Source inspection is historical metadata only, not runtime verification.
+- No runtime execution, export-parity, Spine Editor import, or animation acceptance is claimed or planned for this archived source.
+- Results from the current browser parser must be tracked independently and must never be attributed to this JSX.
